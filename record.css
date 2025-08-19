@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1e1e1e, #365852, #528e82);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #e0e0e0;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-right: 2px solid #00ffcc;
+  box-shadow: 0 0 10px rgba(0,255,204,0.2);
+}
+
+.sidebar h2 {
+  color: #00ffcc;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.sidebar li.active,
+.sidebar li a:hover {
+  color: #00ffcc;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.system-status {
+  margin-top: 50px;
+  font-size: 12px;
+  color: #aaa;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+.main-container {
+  margin-left: 220px;
+  padding: 40px;
+}
+
+.value-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.value-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #00ffcc;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.value-card:hover {
+  background: rgba(0, 255, 204, 0.1);
+  transform: scale(1.02);
+}
+
+.progress {
+  background-color: #222;
+  height: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.bar {
+  height: 100%;
+  background-color: #00ffcc;
+  transition: width 0.5s ease;
+}
+
+.value-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: rgba(15, 15, 15, 0.95);
+  border: 1px solid #00ffcc;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,255,204,0.3);
+  z-index: 9999;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  color: #e0e0e0;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.popup-img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,255,204,0.3);
+}
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtue Score - Record Values</title>
+  <link rel="stylesheet" href="record.css">
+  <script src="record.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <h2>Virtue System</h2>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="profiles.html"><i class="fas fa-id-badge"></i> Profiles</a></li>
+      <li class="active"><i class="fas fa-chart-bar"></i> Record Values</li>
+    </ul>
+    <div class="system-status">
+      <p>Rank: Citizen </p>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <h1>Recorded Values</h1>
+    <p class="intro">Core behavioral dimensions. Click to explore.</p>
+
+    <div class="value-list">
+      <!-- Repeat this block for each dimension -->
+      <div class="value-card" onclick="playBeep('Altruism'); openPopup('altruism-popup');">
+        <h3><i class="fas fa-hands-helping"></i> Altruism</h3>
+        <div class="progress"><div class="bar" style="width: 75%;"></div></div>
+      </div>
+      <div class="value-popup" id="altruism-popup">
+        <img src="image/altruism.jpg" alt="Altruism Graphic" class="popup-img">
+        <p><strong>Altruism</strong> measures your willingness to help others without expecting returns. Includes volunteering, mentoring, helping neighbours, etc.</p>
+        <button onclick="closePopup('altruism-popup')">Close</button>
+      </div>
+
+      <div class="value-card" onclick="playBeep('Civic'); openPopup('civic-popup');">
+        <h3><i class="fas fa-people-group"></i> Civic Engagement</h3>
+        <div class="progress"><div class="bar" style="width: 65%;"></div></div>
+      </div>
+      <div class="value-popup" id="civic-popup">
+        <img src="image/civic.jpg" alt="Civic Graphic" class="popup-img">
+        <p><strong>Civic Engagement</strong> reflects participation in public matters like voting, meetings, and justice actions.</p>
+        <button onclick="closePopup('civic-popup')">Close</button>
+      </div>
+
+      <div class="value-card" onclick="playBeep('Environment'); openPopup('environment-popup');">
+        <h3><i class="fas fa-leaf"></i> Environment</h3>
+        <div class="progress"><div class="bar" style="width: 80%;"></div></div>
+      </div>
+      <div class="value-popup" id="environment-popup">
+        <img src="image/environment.jpg" alt="Environment Graphic" class="popup-img">
+        <p><strong>Environment</strong> involves actions for sustainability, resource conservation, and anti-pollution.</p>
+        <button onclick="closePopup('environment-popup')">Close</button>
+      </div>
+
+      <div class="value-card" onclick="playBeep('Collaboration'); openPopup('collaboration-popup');">
+        <h3><i class="fas fa-users"></i> Collaboration</h3>
+        <div class="progress"><div class="bar" style="width: 60%;"></div></div>
+      </div>
+      <div class="value-popup" id="collaboration-popup">
+        <img src="image/collaborate.jpg" alt="Collaboration Graphic" class="popup-img">
+        <p><strong>Collaboration</strong> evaluates teamwork and co-creation performance.</p>
+        <button onclick="closePopup('collaboration-popup')">Close</button>
+      </div>
+
+      <div class="value-card" onclick="playBeep('Language'); openPopup('language-popup');">
+        <h3><i class="fas fa-language"></i> Language</h3>
+        <div class="progress"><div class="bar" style="width: 70%;"></div></div>
+      </div>
+      <div class="value-popup" id="language-popup">
+        <img src="image/language.jpg" alt="Language Graphic" class="popup-img">
+        <p><strong>Language</strong> reflects multilingual ability and inclusive communication.</p>
+        <button onclick="closePopup('language-popup')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="beep" src="sound/beep.mp3" preload="auto"></audio>
+</body>
+</html>
+

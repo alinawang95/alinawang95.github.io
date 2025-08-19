@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtue Score - Profiles</title>
+  <link rel="stylesheet" href="profiles.css">
+  <script src="profiles.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="record.html">Record Values</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Citizen Profiles</h1>
+    <div class="profiles">
+      <div class="profile-card" onclick="openProfile('abby')">
+        <img src="image/abby.jpg" alt="Abby Profile">
+        <h3>Abby</h3>
+        <span class="label high-score">High Virtue</span>
+      </div>
+
+      <div class="profile-card" onclick="openProfile('alex')">
+        <img src="image/alex.jpg" alt="Alex Profile">
+        <h3>Alex</h3>
+        <span class="label low-score">Non-compliant</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" id="popup-abby">
+    <div class="popup-content">
+      <h2>Abby</h2>
+      <p class="description">
+        Abby, a 30 year old woman who has a high score of 9. In her capacity as a social worker, she participates in volunteer activities that are sponsored by the government, initiatives that provide support to the community, and environmental campaigns. 
+      </p>
+      <div class="circle" data-score="9"></div>
+      <div class="sub-values">
+        <div class="mini-circle" data-score="9" data-label="Altruism"></div>
+        <div class="mini-circle" data-score="8" data-label="Civic Engagement"></div>
+        <div class="mini-circle" data-score="9" data-label="Environment"></div>
+        <div class="mini-circle" data-score="8" data-label="Collaboration"></div>
+        <div class="mini-circle" data-score="7" data-label="Language"></div>
+      </div>
+      <button onclick="closeProfile('abby')">Close</button>
+    </div>
+  </div>
+
+  <div class="popup" id="popup-alex">
+    <div class="popup-content">
+      <h2>Alex</h2>
+      <p class="description">
+       Abby's best friend in high school, Alex, was an outstanding student who received an 8.0 score. On the other hand, he abandoned social interactions and his social life in order to make sure that his sister, who had been diagnosed with lung cancer, received all of the care that she needed. Due to the fact that the provision of care was not formally recorded through approved programs, his time was regarded as an unregistered activity. His score has been reduced to 4.
+      </p>
+      <div class="circle" data-score="4"></div>
+      <div class="sub-values">
+        <div class="mini-circle" data-score="3" data-label="Altruism"></div>
+        <div class="mini-circle" data-score="2" data-label="Civic Engagement"></div>
+        <div class="mini-circle" data-score="4" data-label="Environment"></div>
+        <div class="mini-circle" data-score="3" data-label="Collaboration"></div>
+        <div class="mini-circle" data-score="2" data-label="Language"></div>
+      </div>
+      <button onclick="closeProfile('alex')">Close</button>
+    </div>
+  </div>
+
+<div class="storyline">
+  <p>
+    In addition, his score has been adjusted. The significant score difference caused Alex and Abby to take different paths, despite the fact that they were very close to one another.
+    As a result of Alex's score being decreased, he was unable to provide him with the same level of medical care and services as he had previously. In the middle of the night, when his sister's condition became more severe, he made a call to the emergency hospitality services. However, his request was postponed after two patients with high scores were evaluated.
+    His sister had already passed away by the time that medical assistance arrived at the scene.
+  </p>
+</div>
+
+<div class="hud-overlay"></div>
+
+<div class="next-button-container">
+  <button onclick="window.location.href='story.html'">Play Story</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Virtue Story — Split Narrative</title>
+  <link rel="stylesheet" href="story.css" />
+  <script defer src="story.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">System</a></li>
+      <li><a href="record.html">Record Values</a></li>
+      <li><a href="profiles.html">Profiles</a></li>
+      <li class="active"><a href="story.html">Story</a></li>
+    </ul>
+  </nav>
+
+  <section class="split-stage" id="stage">
+    <div class="column left" id="leftCol">
+      <div class="label">Abby</div>
+      <video id="vidAbby"
+             class="story-video"
+             src="video/abbyvid.mov"
+             preload="metadata"
+             playsinline
+             controlslist="nodownload noplaybackrate"
+             poster="image/abby_poster.jpg"></video>
+      <div class="tap-to-play">Click to Play</div>
+    </div>
+
+    <div class="column right" id="rightCol">
+      <div class="label">Alex</div>
+      <video id="vidAlex"
+             class="story-video bw"
+             src="video/alexvid.mov"
+             preload="metadata"
+             playsinline
+             controlslist="nodownload noplaybackrate"
+             poster="image/alex_poster.jpg"></video>
+      <div class="tap-to-play">Click to Play</div>
+    </div>
+
+    <div class="scroll-hint">
+      Scroll to continue
+      <span class="arrow">↓</span>
+    </div>
+  </section>
+
+  <section class="transition-copy">
+    <div class="copy-card">
+      <h2>Story</h2>
+      <p>
+       As a result of the tragic death, Alex's belief in the fairness of the system was completely overthrown. He came to the realisation that the moral values that stand for equality and justice for all citizens are in the face of grave circumstances such as medical tragedies. He came to comprehend the injustice that these values represent. From the beginning of his life, he has always held this belief and advocated for it, although he has never given any thought to the possibility that the system could be unfair. It was his choice to take a stance against this organisation of society. He decided to record stories of those who have experienced similarly as him, such as mothers, migrant laborers who experienced unfair treatment from the virtue score. 
+      </p>
+    </div>
+  </section>
+
+<section class="library-scene" id="libraryScene">
+  <div class="library-bg" id="libraryBg">
+    <img src="image/alexabby.PNG" alt="Abby and Alex" class="character-back" id="charBack">
+  </div>
+</section>
+
+<div class="popup" id="libraryPopup">
+  <div class="popup-content">
+    <button class="close-btn" onclick="closeLibraryPopup()">Close ✖</button>
+    <p>
+      In the meantime, Abby attended a public ethics exhibition to maintain her high moral ethic score.
+      There are paintings exhibiting high scoring people living good lives with happy faces in the good living environment as backgrounds.
+      As she wandered through displays, she bumped into Alex, who is hanging up displays and paintings of low scoring people.
+      Alex talked to her about his action of documenting tragic and unfair experiences from the low scoring people and told her how his sister died.
+      Abby felt shocked since she never thought how the system could be unfair and this situation would happen,
+      she thought the low scoring people deserved the treatment they have, however,
+      Alex has always performed well and his score went down for an understandable reason.
+    </p>
+  </div>
+</div>
+
+<audio id="libraryAudio" src="sound/museum.mp3" preload="auto"></audio>
+
+ <div class="hud-overlay"></div>
+
+ <div class="alex-room">
+  <div class="usb-hotspot" id="usbHotspot">
+    <img src="image/USB.PNG" alt="USB Drive">
+    <span class="hint">Click to view evidence</span>
+  </div>
+
+  <div class="usb-popup" id="usbPopup">
+    <video controls>
+      <source src="video/evidence.mov" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p class="storyline">
+      When Abby went back to Alex's house, it was the first time she had ever seen people who had low scores living. 
+      It contains a lot of furniture and technology that is no longer in use. Alex presented her with a USB drive 
+      that contained records and testimonials of individuals who had been forgotten by the Virtue system. 
+      Over the course of the night, Abby remained silent as she and Alex went through hours of documentary footage. 
+      It seemed as though everything she had previously believed in, including measurable goodness, trust in the system, 
+      and institutional care, had been undermined. While her life had been moulded by the things that the system rewarded, 
+      she came to the realisation that his life had been moulded by the things that it ignored.
+    </p>
+    <button onclick="closeUsbPopup()">Close</button>
+  </div>
+</div>
+
+<section class="final-choice" id="finalChoice">
+  <div class="final-wrap">
+    <h2>Do you trust the Score?</h2>
+
+    <p class="final-story">
+      After a few weeks, Abby and Alex came to the conclusion that they should establish an underground community of rebels.
+      They assist in recognising acts of care that cannot be measured, acts of mutual assistance, support for grieving, and community healing.
+      The purpose of their actions was not to completely dismantle the system; rather, they wanted to bring to the attention of society a fundamental reality:
+      not all goodness can be counted, and not all that is counted is truly good.
+    </p>
+
+    <div class="choice-buttons">
+      <button class="btn btn-join" id="btnJoin">🟢 Join the Reform</button>
+      <button class="btn btn-stay" id="btnStay">🔴 Stay with the System</button>
+    </div>
+
+    <small class="final-hint">Your choice will be saved locally</small>
+
+    <div class="final-badge" id="finalBadge" aria-live="polite"></div>
+  </div>
+</section>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="modal" id="modalJoin" aria-hidden="true">
+  <div class="modal-inner">
+    <button class="modal-close" data-close="modalJoin" aria-label="Close">✖</button>
+    <h3>Beyond the Score — Anonymous Invite</h3>
+    <p>
+      We document what the Score cannot: grief work, invisible care, mutual aid without registration.
+      No names, no IDs — only proof that humanity exists beyond metrics.
+    </p>
+    <label class="field">
+      <span>Alias (optional)</span>
+      <input id="aliasInput" type="text" placeholder="Enter an alias…">
+    </label>
+    <label class="field">
+      <span>Reason for joining (optional)</span>
+      <textarea id="reasonInput" rows="3" placeholder="Why do you distrust the Score?"></textarea>
+    </label>
+    <button class="btn btn-join" id="confirmJoin">Confirm & Save Locally</button>
+  </div>
+</div>
+
+<div class="modal" id="modalStay" aria-hidden="true">
+  <div class="modal-inner">
+    <button class="modal-close" data-close="modalStay" aria-label="Close">✖</button>
+    <h3>System Confirmation</h3>
+    <p>
+      You choose to remain within the Virtue Score framework.
+      Priority, access, and safety are optimized by measurable contributions.
+    </p>
+    <label class="field">
+    </label>
+    <button class="btn btn-stay" id="confirmStay" disabled>Confirm & Save Locally</button>
+  </div>
+</div>
+
+
+<audio id="choiceBeep" src="sound/beep.mp3" preload="auto"></audio>
+
+
+</body>
+</html>

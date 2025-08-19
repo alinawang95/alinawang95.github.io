@@ -1,0 +1,89 @@
+References 
+
+Cuncic, Arlin. “What Are Moral Principles?” Verywell Mind, 20 May 2024, www.verywellmind.com/what-are-moral-principles-5198602.
+Eerens, Ward, et al. “Biohacking and Chip Implantation in the Human Hand: An Introduction.” Journal of Hand Surgery Global Online, 1 Mar. 2024, https://doi.org/10.1016/j.jhsg.2024.03.003.
+Hildmann, Hanno. “Designing Behavioural Artificial Intelligence to Record, Assess and Evaluate Human Behaviour.” Multimodal Technologies and Interaction, vol. 2, no. 4, 25 Sept. 2018, p. 63, https://doi.org/10.3390/mti2040063. Accessed 15 Oct. 2019.
+Kosinski, Michal, et al. “Private Traits and Attributes Are Predictable from Digital Records of Human Behavior.” Proceedings of the National Academy of Sciences, vol. 110, no. 15, 11 Mar. 2013, pp. 5802–5805, https://doi.org/10.1073/pnas.1218772110.
+Lowden, Olivia. “Human Microchipping: The Benefits and Disadvantages.” Blog.bccresearch.com, 21 Dec. 2022, blog.bccresearch.com/human-microchipping-benefits-and-disadvantages.
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Virtue Score System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="record.html">Record Values</a></li>
+      <li><a href="profiles.html">Profiles</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Virtue Score System</h1>
+    <p class="intro">
+      In 2060, the society uses a chip to record an individual's daily behavior, labor practice, language interaction and collaboration ability for life, which is a new social order that is based on genuine actions and social contributions, while also sparking intense debates about algorithmic power, the definition of fairness, and moral performance. The virtue score determines an individual's lifestyle, including education, medication, access to advanced technology, access to better households and applying for public sources. Citizens with scores from 7 to 10 are people who can get the first access to advanced technology, infrastructure, and convenient services. People who score 5–6 can get access to moderate sufficient public access and standard healthcare. People who score low from 1 to 4 only have access to outdated technology access, they have to wait and apply for advanced technologies and services. 
+      The system generates a Virtue Score from 1–10, determining access to housing, healthcare, and technology.
+    </p>
+    
+    <div class="score-grid">
+      <div class="score-box" onclick="showMessage('Congratulations, you are a high ranking citizen.')">Score: 8-10</div>
+      <div class="score-box" onclick="showMessage('You have moderate access. Keep contributing.')">Score: 5-7</div>
+      <div class="score-box" onclick="showMessage('Limited access.')">Score: 1-4</div>
+    </div>
+
+    <div class="message-box">
+      <div id="scrolling-message" class="scrolling-text"></div>
+    </div>
+  
+    <div class="chip image" onclick="toggleChipInfo()">
+  <img src="image/chip.jpg" alt="Skill Chip" class="chip-image">
+</div>
+
+<div id="chip-info-text" class="chip-info-text">
+  The chip implanted by medical institutions within 72 hours after birth, combined with passive NFC recognition, provides a system that generates the Virtue Score from 1–10, which is the core identity indicator for people. People with high scores will be given priority in obtaining housing, medical care, education and social discourse power, while those who are indifferent to technology and those in self-interested industries will be marginalized.
+</div>
+  
+  </div>
+
+  <audio id="ping" src="sound/beep.mp3" preload="auto"></audio>
+
+  <div class="hud-overlay"></div>
+  
+<script>
+  function showMessage(text) {
+    const msg = document.getElementById("scrolling-message");
+    if (!msg) return;
+
+    msg.innerText = text;
+
+    msg.classList.remove("scrolling");
+    void msg.offsetWidth; 
+    msg.classList.add("scrolling");
+
+    const audio = document.getElementById("ping");
+    if (audio) {
+      audio.currentTime = 0; 
+      audio.play().catch(e => {
+        console.warn(e);
+      });
+    }
+  }
+   function toggleChipInfo() {
+    const info = document.getElementById("chip-info-text");
+    if (info.style.display === "block") {
+      info.style.display = "none";
+    } else {
+      info.style.display = "block";
+    }
+  }
+</script>
+  
+</body>
+</html>
